@@ -14,3 +14,11 @@ def index_page():
         print("================================================================================")
         result = str(eval(request.args['expression']))
     return render_template("index.html", result=result)
+
+@app.route('/table/')
+def table_page():
+    return render_template('table.html')
+
+@app.route('/result/<int:x>/<int:y>/')
+def result_page(x, y):
+    return render_template('result.html', x=x, y=y)
