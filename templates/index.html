@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-</head>
-<body>
-    <h1>Добро пожаловать!</h1>
-    <form>
-        <label>Введите арифметическое выражение (например 2+3):</label>
-        <input type="text" name="expression">
-        <input type="submit" value="Вычислить">
-    </form>
-    <p>Результат: {{ result }}</p>
-    <img alt="" src="{{ url_for('static', filename='birds.jpeg')}}">
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Добро пожаловать!</h1>
+<form>
+    <label>Введите арифметическое выражение (например 2+3):</label>
+    <input type="text" name="expression">
+    <input type="submit" value="Вычислить">
+</form>
+<p>Результат: {{ result }}</p>
+<img alt="" src="{{ url_for('static', filename='birds.jpeg')}}">
 <a href="{{ url_for('table_page') }}"S>Таблица умножения</a>
-</body>
-</html>
+{% endblock %}
